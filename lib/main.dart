@@ -1,3 +1,6 @@
+import 'package:farmers_market/routes.dart';
+import 'package:farmers_market/screens/splash/splash_screen.dart';
+import 'package:farmers_market/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -10,27 +13,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Farmers market',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: const Root(),
-    );
-  }
-}
-
-class Root extends StatefulWidget {
-  const Root({Key? key}) : super(key: key);
-
-  @override
-  _RootState createState() => _RootState();
-}
-
-class _RootState extends State<Root> {
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(child: Text("This is the inital page ")),
+      debugShowCheckedModeBanner: false,
+      title: 'Farmer Market Place',
+      theme: theme(),
+      initialRoute: SplashScreen.routeName,
+      routes: routes,
     );
   }
 }
